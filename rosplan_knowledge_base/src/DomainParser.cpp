@@ -10,7 +10,7 @@ namespace KCL_rosplan {
 	/**
 	 * parse the domain file
 	 */
-	void DomainParser::parseDomain(const std::string domainPath) {
+	void DomainParser::parseDomain(std::string domainPath) {
 		
 		// only parse domain once
 		if(domain_parsed) return;
@@ -26,8 +26,7 @@ namespace KCL_rosplan {
 
 		// parse domain
 		VAL::current_analysis = val_analysis = &VAL::an_analysis;
-		std::ifstream domainFile;
-		domainFile.open(domainFileName.c_str());
+		std::ifstream domainFile(domainFileName.c_str());
 		yydebug = 0;
 
 		VAL::yfl = new yyFlexLexer;

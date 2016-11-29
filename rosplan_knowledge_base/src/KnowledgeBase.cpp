@@ -448,7 +448,7 @@ int main(int argc, char **argv)
 
 	// parameters
 	std::string domainPath;
-	n.param("/rosplan/domain_path", domainPath, std::string("common/domain.pddl"));
+	n.param("/domain_path", domainPath, std::string("common/domain.pddl"));
 
 	KCL_rosplan::KnowledgeBase kb;
 	ROS_INFO("KCL: (KB) Parsing domain");
